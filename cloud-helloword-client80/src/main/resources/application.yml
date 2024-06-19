@@ -1,0 +1,27 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-helloWorld-cline
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+
+    openfeign:
+#      client:
+#        config:
+#          default:
+#            connectTimeout: 4000 #连接超时时间
+#            readTimeout: 4000 #读取超时时间
+        #OpenFeign中http client
+        # 如果不做特殊配置，OpenFeign默认使用JDK自带的HttpURLConnection发送HTTP请求，
+        #由于默认HttpURLConnection没有连接池、性能和效率比较低，如果采用默认，性能上不是最牛B的，所以加到最大。
+      httpclient:
+        hc5:
+          enabled: false
+              #cloud-payment-service:
+            #connectTimeout: 4000 #连接超时时间
+            #readTimeout: 4000 #读取超时时间
