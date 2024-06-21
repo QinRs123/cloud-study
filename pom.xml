@@ -14,6 +14,7 @@
         <module>cloud-helloword-client80</module>
         <module>cloud-openfeign-api</module>
         <module>cloud-gateway9527</module>
+        <module>cloud-helloword-server8002</module>
     </modules>
 
     <properties>
