@@ -1,5 +1,7 @@
 package com.atguigu.cloud.controller;
 
+import com.atguigu.cloud.response.Result;
+import com.atguigu.cloud.response.ResultCodeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,5 +18,10 @@ public class TestController {
     @GetMapping("/get")
     public String test(){
         return "hello word ..."+port;
+    }
+
+    @GetMapping("/test/result")
+    public Result<String> result(){
+        return  Result.build("yes+"+port, ResultCodeEnum.SUCCESS);
     }
 }
