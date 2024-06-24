@@ -1,0 +1,27 @@
+server:
+  port: 8010
+
+spring:
+  application:
+    name: cloud-login-server
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloud?serverTimezone=UTC&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 00
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+
